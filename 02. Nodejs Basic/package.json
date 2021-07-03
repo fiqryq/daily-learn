@@ -1,0 +1,13 @@
+{
+  "name": "02.-nodejs-basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "helloWorld.js",
+  "scripts": {
+    "start": "node helloWorld.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
