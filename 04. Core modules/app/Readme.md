@@ -95,6 +95,7 @@ rl.question(
 
 ## review code from my friend (better code)
 tips : promise question and readline to avoid [Callback Hell](https://kotakode.com/pertanyaan/527/Apa-itu-callback-hell%3F)
+
 ```js
 // pakai promises di fs
 const { promises: fs } = require("fs");
