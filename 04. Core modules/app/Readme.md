@@ -5,10 +5,10 @@ note : sorry for bad english i just learn how to write using english word hehe
 
 # Revision 
 ## Old code
-issue : every data added new data will overwrite old data not add new to json.
+issue : everytime new data added it will overwriten not add new data to json
 
 ```js
-    const fs = require("fs");
+const fs = require("fs");
 const readline = require("readline");
 const rl = readline.createInterface({
   input: process.stdin,
