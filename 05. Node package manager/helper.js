@@ -5,8 +5,4 @@ function gettimenow() {
   return moment(new Date()).format(FORMAT);
 }
 
-function gettimeleft() {
-  return moment().startOf("day").fromNow();
-}
-
-module.exports = { gettimenow, gettimeleft };
+module.exports = { gettimenow };
