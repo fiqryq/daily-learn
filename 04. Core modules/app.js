@@ -31,3 +31,9 @@ fs.writeFile(
     }
   }
 );
+
+// read file secara asynchronous
+fs.readFile("data/file.txt", "utf-8", (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
