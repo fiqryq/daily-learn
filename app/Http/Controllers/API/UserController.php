@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\Fortify\PasswordValidationRules;
 use Exception;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Helpers\ResponseFormatter;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Symfony\Component\Console\Helper\Helper;
 
 class APIUserController extends Controller
 {
+
+    use PasswordValidationRules;
+
     public function login(Request $request)
     {
         try {
@@ -43,5 +46,47 @@ class APIUserController extends Controller
                 'Autenthication Failed', 500
             ]);
         }
+    }
+
+    public function register(Request $request)
+    {
+        try {
+            $request->validate([
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => $this->passwordRules()
+            ]);
+
+            User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'address' => $request->address,
+                'houseNumber' => $request->houseNumber,
+                'phoneNumber' => $request->phoneNumber,
+                'city' => $request->city,
+                'password' => Hash::make($request->password)
+            ]);
+
+            $user = User::where(['email' => $request->email])->first();
+            $tokenresult = $user->createToken('authToken')->plainTextToken;
+
+            return ResponseFormatter::success([
+                'access_token' => $tokenresult,
+                'token_type' => 'Bearer',
+                'user' => $user,
+            ]);
+        } catch (Exception $eror) {
+            return ResponseFormatter::error([
+                'message' => 'Something went wrong!',
+                'error' => $error,
+                'Autenthication Failed', 500
+            ]);
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        $token = $request->user()->currentAccessToken()->delete();
+        return ResponseFormatter::success([$token, 'Token Revoked']);
     }
 }
