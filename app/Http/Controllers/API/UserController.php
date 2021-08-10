@@ -116,13 +116,13 @@ class APIUserController extends Controller
             $user = Auth::user();
             $user->update();
 
-            return ResponseFormatter::success($file, 'File successfuly updated!');
+            return ResponseFormatter::success([$file], 'File successfuly updated!');
         }
     }
 
     public function logout(Request $request)
     {
         $token = $request->user()->currentAccessToken()->delete();
-        return ResponseFormatter::success([$token, 'Token Revoked']);
+        return ResponseFormatter::success($token, 'Token Revoked');
     }
 }
