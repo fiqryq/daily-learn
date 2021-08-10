@@ -93,6 +93,11 @@ class APIUserController extends Controller
         return ResponseFormatter::success($user, 'Profile Updated');
     }
 
+    public function fetch(Request $request)
+    {
+        return ResponseFormatter::success($request->user(), 'Success get profile data');
+    }
+
     public function logout(Request $request)
     {
         $token = $request->user()->currentAccessToken()->delete();
