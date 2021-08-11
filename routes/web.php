@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\Midtranscontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,13 @@ Route::get('/', function () {
 Route::get('/debug-sentry', function () {
     throw new Exception('My first Sentry error!');
 });
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('midtrans/success',[Midtranscontroller::class,'success']);
+Route::get('midtrans/unfinish',[Midtranscontroller::class,'unfinish']);
+Route::get('midtrans/error',[Midtranscontroller::class,'error']);
+
                                                                                                                                                                                                                                                                                                                                                                                                         
