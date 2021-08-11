@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FoodController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\API\FoodController;
+use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\Midtranscontroller;
 use App\Http\Controllers\API\TransactionController;
 

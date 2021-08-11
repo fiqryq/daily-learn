@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Helpers\ResponseFormatter;
 use Illuminate\Http\Request;
 
-class APIFoodController extends Controller
+class FoodController extends Controller
 {
     public function all(Request $request)
     {
