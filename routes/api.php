@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\API\Midtranscontroller;
 use App\Http\Controllers\API\TransactionController;
 
 
@@ -32,3 +33,5 @@ Route::post('login', [UserController::class, 'login']);
 Route::post('register', [UserController::class, 'register']);
 
 Route::post('food', [FoodController::class, 'all']);
+
+Route::post('midtrans/callback',[Midtranscontroller::class , 'callback']);
