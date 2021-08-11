@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1944ef4fe46da89d721c52c5a85c3a2c",
+    "content-hash": "c2b7c7b0ea09985447724ff3baf7b223",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2031,6 +2031,61 @@
                 }
             ],
             "time": "2021-07-13T05:03:28+00:00"
+        },
+        {
+            "name": "midtrans/midtrans-php",
+            "version": "2.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Midtrans/midtrans-php.git",
+                "reference": "41520bfe9fed576023415cb31d13b3a0cfeff0aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Midtrans/midtrans-php/zipball/41520bfe9fed576023415cb31d13b3a0cfeff0aa",
+                "reference": "41520bfe9fed576023415cb31d13b3a0cfeff0aa",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.7.*",
+                "psy/psysh": "0.4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Midtrans\\": "Midtrans/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andri Setiawan",
+                    "email": "andri.setiawan@veritrans.co.id"
+                },
+                {
+                    "name": "Alvin Litani",
+                    "email": "alvin.litani@veritrans.co.id"
+                },
+                {
+                    "name": "Ismail Faruqi",
+                    "email": "ismail.faruqi@veritrans.co.id"
+                }
+            ],
+            "description": "PHP Wrapper for Midtrans Payment API.",
+            "homepage": "https://midtrans.com",
+            "support": {
+                "issues": "https://github.com/Midtrans/midtrans-php/issues",
+                "source": "https://github.com/Midtrans/midtrans-php/tree/v2.4.3"
+            },
+            "time": "2021-08-04T04:08:41+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
