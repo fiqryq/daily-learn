@@ -21,6 +21,16 @@
  */
 
 // TODO
+function minimal(a, b) {
+  return Math.min(a, b);
+}
+
+function power(a, b) {
+  return Math.pow(a, b);
+}
+
+console.log(minimal(80, 2));
+console.log(power(3, 3));
 
 /**
  * Hiraukan kode di bawah ini
